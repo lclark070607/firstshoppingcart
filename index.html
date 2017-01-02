@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+    <title>My First Shopping Cart</title>
+    <!--<script src="app.js"></script>-->
+    <script src="jquery-3.1.1.js"></script>
+    <!--<script src="script.js"></script>-->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>My First Shopping Cart<h1>
+        <div>
+           <!--list of items that you can buy-->
+            <ul>
+                <!--data-name is what actually passes through the function-->
+                <li><a class="add-to-cart" href="#" data-name="Apple" data-price="1.22">Apple $1.22</a></li> 
+                <li><a class="add-to-cart" href="#" data-name="Banana" data-price="1.33">Banana $1.33</a></li> 
+                <li><a class="add-to-cart" href="#" data-name="Shoe" data-price="1.22">Shoe $22.33</a></li> 
+                <li><a class="add-to-cart" href="#" data-name="Frisbee" data-price="5.22">Frisbee $5.22</a></li> 
+            </ul>
+            
+            <button id="clear-cart">Clear Cart</button>
+        </div>
+
+        <div>
+            <ul id="show-cart">
+                <li>???????</li>
+                </ul>
+                <div>Total Cart: $<span id="total-cart"></span></div>
+        </div>
+            
+
+        <script src="jquery-3.1.1.js"></script>
+        <script src="script.js"></script>
+
+        <script>
+        //JQuery
+// Click Function for buttons
+
+    //$("#total-cart").html("99.75"); //this ends up replacing text no bueno, add a span
+
+    $(".add-to-cart").click(function(event) {
+        event.preventDefault(); //we don't want the button to go to default mechanism
+        let name = $(this).attr("data-name"); //$this represents the link that you clicked on, attr lets us access any of the attributes
+        let price = Number($(this).attr("data-price"));//Number function helps us return a value vs a string
+
+        addItemToCart(name, price, 1);
+        displayCart();
+    });
+
+    $("#clear-cart").click(function(event) {
+        clearCart();
+        displayCart();
+
+    });
+
+    function displayCart() {
+        // console.log("hello world");
+        let cartArray = listCart();//gets the cart array from the list cart function
+            // console.log("*** Count Cart :"+cartArray.length);
+        let output = ""; //define variable output as empty string
+        for (let i in cartArray) { //loops through item in cart array
+            output += "<li>"+cartArray[i].name +" "+cartArray[i].count+"</li>" //append, add to the end of
+        }
+        $("#show-cart").html(output);  //overriding everything that's inside this element.
+                                    //writing everything in output variable into the show-cart div
+                                    //we need to build the string to put into the console
+        $("#total-cart").html( totalCostCart() );
+}                                   //html output allows us to write text directly into the tag
+
+    
+    //*************************************************
+    //Shopping Cart Functions
+      let cart = [];
+    //display name, price, count
+    let Item = function(name, price, count) {
+        this.name = name
+        this.price = price
+        this.count = count
+    };
+
+    function addItemToCart(name, price, count) {
+        for (let i in cart) { 
+            if (cart[i].name === name) {          
+                cart[i].count += count;
+                saveCart(); 
+                return; 
+            }
+        }
+        
+        let item = new Item(name, price, count);
+        cart.push(item);
+        saveCart();
+    }
+
+    function removeItemFromCart(name) {
+       for ( let i in cart) {
+           if (cart[i].name === name) { 
+                 cart[i].count --; 
+                 if (cart[i].count === 0) {
+                    cart.splice(i, 1); 
+                 }
+                break;                      
+           }
+       }
+       saveCart();
+    }
+
+    function removeItemFromCartAll(name) {
+        for (let i in cart) {
+            if (cart[i].name === name) {
+                cart.splice(i, 1);
+                break;
+            }
+        }
+        saveCart();
+    }
+
+    function clearCart() {
+        cart = [];
+        saveCart();
+    }
+
+    function countCart() {
+        let totalCount = 0;  //start with value of zero outside the loop
+        for (let i in cart) {
+            totalCount += cart[i].count;//take the count of a particular item and add it to the total count
+        }
+        return totalCount;
+    }
+
+    // console.log( countCart() );
+
+    function totalCostCart() {
+        let totalCost = 0;
+        for (let i in cart) {
+            totalCost += cart[i].price * cart[i].count; //get the price of every item in the cart and add them up
+        }                           //cart[i].price is price of each item, cart[i].count is how many items there are
+        return totalCost;
+    }
+    // console.log( totalCostCart() );
+    
+    function listCart() {
+        let cartCopy = [];
+        // console.log("Listing cart");
+            // console.log(cart);
+        for (let i in cart) { 
+            console.log(i);//loop through every item in the array
+            let item = cart[i];
+            let itemCopy = {};
+            for (let p in item) {   //loop through every property in the object
+                itemCopy[p] = item[p]; 
+            }
+            cartCopy.push(itemCopy); 
+        }
+        return cartCopy;
+    };
+    
+    function saveCart() {
+        localStorage.setItem("shoppingCart", JSON.stringify(cart)); //convert to string describing the array&objects                                               
+    }
+
+    function loadCart() {
+        //cart = localStorage.getItem("shoppingCart");//convert from JSON object to array/object
+        cart = JSON.parse(localStorage.getItem("shoppingCart"));
+        if(cart === null) {
+            cart = [];
+        }
+    }
+    
+    loadCart(); 
+    displayCart(); 
+
+        </script>
+        </body>
+
+</html>
+
+<!--Demonstration Text for the Display Cart Function
+
+ // let someText = ">>>";
+        // someText += "AAAAA"; //appends to end of >>>
+        // console.log(someText);
+
+        let message = "Hello World";
+        let someText = "<h1>" +message+"</h1>";
+        let anotherText = "<p>"+message+"</p>"; //end the first string with quotes, 
+        console.log(someText);
+        console.log(anotherText);
+        -->
