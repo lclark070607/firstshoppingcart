@@ -18,25 +18,41 @@
                 <!--data-name is what actually passes through the function-->
                 <!--First Product-->
                 <div class="item">
-                    <div class="buttons">
-                    <span class="delete-btn"></span>
-                    <span class="like-btn"></span>
+                    <li class="product">Sad Boy</li>
+                    <p>$41.22</p>
+                    <img src="https://unsplash.it/150/150?image=1062">
+                    <button class="add-to-cart"><a class="add-to-cart" href="#" data-name="Sad Boy" data-price="41.22">Add to Cart</a></button> 
+                </div>
+              
+                <div class="item">  
+                    <li class="product">Buster!</li>
+                    <p>$21.33</p>
+                    <img src="https://unsplash.it/150/150?image=1025"> 
+                    <button class="add-to-cart"><a class="add-to-cart" href="#" data-name="Buster!" data-price="21.33">Add to Cart</a></button>
                 </div>
                 
-                
-                <li class="product"></li>
-                <button><a class="add-to-cart" href="#" data-name="Apple" data-price="1.22">Apple $1.22</a></button> 
-                <li class="product"><a class="add-to-cart" href="#" data-name="Banana" data-price="1.33">Banana $1.33</a></li> 
-                <li class="product"><a class="add-to-cart" href="#" data-name="Shoe" data-price="22.33">Shoe $22.33</a></li> 
-                <li class="product"><a class="add-to-cart" href="#" data-name="Frisbee" data-price="5.22">Frisbee $5.22</a></li> 
+                <div class="item">
+                    <li class="product">Sarafina</li>
+                    <p>$82.33</p>
+                    <img src="https://unsplash.it/150/150?image=1074">
+                    <button class="add-to-cart"><a class="add-to-cart" href="#" data-name="Sarafina" data-price="82.33">Add to Cart</a></button>
+                </div>
+
+                <div class="item">
+                    <li class="product">George</li>
+                    <p>$65.54</p>
+                    <img src="https://unsplash.it/150/150?image=1084">
+                    <button class="add-to-cart"<a class="add-to-cart" href="#" data-name="George" data-price="65.54">Add to Cart</button> 
+                </div>
+            
             </ul>
             
-            <button id="clear-cart">Clear Cart</button>
         </div>
 
-        <div>
+        <div class="bottom-cart">
+            <button id="clear-cart">Clear Cart</button>
             <ul id="show-cart">
-                <li>???????</li>
+                <li class="listitems">???????</li>
                 </ul>
                 <div>Subtotal: $<span id="total-cart"></span></div>
                 <div>Tax: $<span id="total-tax"></span></div>
