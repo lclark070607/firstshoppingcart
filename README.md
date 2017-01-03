@@ -64,6 +64,27 @@ and then, in many cases, having to rewatch the tutorial segment only to find tha
 mark a class item with the appropriate period before the name.  On the upside, it is 
 awesome to rewatch the explanations because they seem to stick better.
 
+5.  WHY IS ADDING THE VALUE OF TWO FUNCTIONS SO HARD????  I basically tried to create a
+function that would add my tax and total.  I was so pleased to figure out the tax function
+I thought this would be a cake walk.  I tried a simple function that mirrored the others, wher
+I added the two functions by name.  Then I did some research and tried these two variations:
+// function add() {
+    // let sum = 0;
+    // $(".add").each(function() {   
+    //     sum += +this.value;
+    // });
+    // return sum; 
+
+    // function finalTotalCart(a, b) {
+    //     let totalcost = 0;
+    //     let a = totalTaxCart();
+    //     let b = totalCostCart();
+    //     totalcost = add(a + b);
+    // }
+    //     console.log(totalcost);
+
+    Nothing was working.  Somehow I'm not accessing the value of the functions.  
+    I did try calling the two functions for tax and subtotal before and in my function.
 
 
 

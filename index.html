@@ -7,17 +7,28 @@
     <!--<script src="script.js"></script>-->
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
     <h1>My First Shopping Cart<h1>
+       <div class="shopping-cart"> 
         <div>
            <!--list of items that you can buy-->
             <ul>
                 <!--data-name is what actually passes through the function-->
-                <li><a class="add-to-cart" href="#" data-name="Apple" data-price="1.22">Apple $1.22</a></li> 
-                <li><a class="add-to-cart" href="#" data-name="Banana" data-price="1.33">Banana $1.33</a></li> 
-                <li><a class="add-to-cart" href="#" data-name="Shoe" data-price="22.33">Shoe $22.33</a></li> 
-                <li><a class="add-to-cart" href="#" data-name="Frisbee" data-price="5.22">Frisbee $5.22</a></li> 
+                <!--First Product-->
+                <div class="item">
+                    <div class="buttons">
+                    <span class="delete-btn"></span>
+                    <span class="like-btn"></span>
+                </div>
+                
+                
+                <li class="product"></li>
+                <button><a class="add-to-cart" href="#" data-name="Apple" data-price="1.22">Apple $1.22</a></button> 
+                <li class="product"><a class="add-to-cart" href="#" data-name="Banana" data-price="1.33">Banana $1.33</a></li> 
+                <li class="product"><a class="add-to-cart" href="#" data-name="Shoe" data-price="22.33">Shoe $22.33</a></li> 
+                <li class="product"><a class="add-to-cart" href="#" data-name="Frisbee" data-price="5.22">Frisbee $5.22</a></li> 
             </ul>
             
             <button id="clear-cart">Clear Cart</button>
@@ -29,8 +40,9 @@
                 </ul>
                 <div>Subtotal: $<span id="total-cart"></span></div>
                 <div>Tax: $<span id="total-tax"></span></div>
+                <div>Total: $<span id="final-total">CANT MAKE IT WORK</span></div>
         </div>
-            
+      </div>      
 
         <script src="jquery-3.1.1.js"></script>
         <script src="script.js"></script>
@@ -179,7 +191,12 @@
         }
         return totaltax.toFixed(2);
     }
-    // console.log( totalTaxCart() );
+
+
+    
+
+        
+    
     
     
     
@@ -276,4 +293,7 @@
         listCart: Function
         saveCart: Function
         loadCart: Function
+        -->
+        <!--
+            -=	x -= y	x = x - y
         -->
