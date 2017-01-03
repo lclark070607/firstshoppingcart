@@ -57,6 +57,14 @@ I'm sure this causes bloat.  I'll ask you about it later.  I used this for insta
 https://www.youtube.com/watch?v=4XO3JkKDr24 
 https://www.youtube.com/watch?v=QpepYlxPJkQ
 
+4.  It may seem that watching a tutorial is easy.  I actually judged myself at first.  BUT DAMN.
+I have to say I have learned a lot about catching my mistakes.  Because I'm sitting here
+following the code and then OOPS.  It's not working.  So then I'm spending time using my console to inspect
+and then, in many cases, having to rewatch the tutorial segment only to find that I didn't
+mark a class item with the appropriate period before the name.  On the upside, it is 
+awesome to rewatch the explanations because they seem to stick better.
+
+
 
 
 
