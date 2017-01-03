@@ -86,6 +86,24 @@ I added the two functions by name.  Then I did some research and tried these two
     Nothing was working.  Somehow I'm not accessing the value of the functions.  
     I did try calling the two functions for tax and subtotal before and in my function.
 
+6.  In the yogastorefront repo -->  I wanted to use svg images and so I ended up 
+learning about Modernizer, which I did install.  I used svg images and replaced
+them with png images.  But I could never get the images (either form) to look
+good or be adequately responsive.  
 
+7.  I stopped using yogastorefront repo because I couldn't figure out JQuery
+install with foundation.  It didn't work.  Also, the whole repo, while fun to 
+play with foundation layout, became a mess.  I did include it though so you
+could see that I was working, researching, etc over break.
+
+8.  I started playing with some simple CSS to style the cart, mainly for my eyes.
+However, somehow I've messed up my code?  So maybe take the link to my style sheet
+out to see what I really was working with through most of my project.
+
+9.  I watched 24 of the 34 videos for the shopping cart tutorial.  I took a lot
+of notes (both in yogastorefront and firstshoppingcart).  It helps me to be
+very active with this stuff.  I tell my students all the time that reading isn't
+a poolside activity necessarily...you have to work it, rework it in your head.
+Coding is very similiar.
 
 
